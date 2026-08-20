@@ -81,11 +81,44 @@ proyecto:
 cp .env.example .env
 ```
 
-El archivo `.env` contiene las variables utilizadas por la API para
-conectarse a PostgreSQL y comunicarse con Ollama.
+Abrir el archivo:
 
-No publique el archivo `.env` ni incluya credenciales reales en el
-repositorio.
+```bash
+nano .env
+```
+
+Para reproducir la configuración utilizada en el ejercicio, completar el
+archivo con:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=iadb
+DB_USER=app_ia
+DB_PASSWORD=claveApp456
+DB_ADMIN_PASSWORD=<debes_agregar_contraseña_del_usuario_administrador>
+OLLAMA_URL=http://localhost:11434/api/generate
+MODELO_OLLAMA=qwen2.5:0.5b
+MOTOR_POR_DEFECTO=eco
+```
+
+La credencial `claveApp456`, utilizada como valor de `DB_PASSWORD`, se
+encuentra actualmente hardcodeada en un archivo de configuración que ya
+está expuesto en el repositorio. Las demás credenciales y valores de
+configuración utilizados por el proyecto también se encuentran definidos
+en los archivos incluidos en el repositorio. Estos valores se documentan
+aquí únicamente para facilitar la reproducción de la solución como parte
+del ejercicio académico.
+
+La variable `DB_ADMIN_PASSWORD` debe completarse con la contraseña del
+usuario administrador de PostgreSQL.
+
+> **Importante:** estos valores corresponden a la configuración utilizada
+> durante el ejercicio académico. Las credenciales no deben reutilizarse
+> en entornos reales o de producción. En un entorno real, las credenciales
+> deben mantenerse fuera del código fuente, del README y del control de
+> versiones. El archivo `.env` utilizado localmente tampoco debe publicarse
+> en el repositorio.
 
 ### 6. Preparar el modelo local
 
